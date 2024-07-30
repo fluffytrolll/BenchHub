@@ -1,0 +1,22 @@
+@mixin font($font-family, $font-file, $font-weight) {
+	@font-face {
+		font-family: $font-family;
+		src: url($font-file + ".ttf");
+		src: url($font-file + ".woff") format("woff"),
+			url($font-file + ".woff2") format("woff2");
+		font-weight: $font-weight;
+		font-style: normal;
+		font-display: swap;
+	}
+}
+
+@mixin font-variable($font-family, $font-file, $font-weight) {
+	@font-face {
+		font-family: $font-family;
+		src: url($font-file + ".ttf") format("ttf supports variations");
+		src: url($font-file + ".woff2") format("woff2 supports variations");
+		font-weight: $font-weight;
+		font-style: normal;
+		font-display: swap;
+	}
+}

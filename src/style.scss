@@ -1,0 +1,69 @@
+@import './assets/styles/mixins';
+
+:root {
+  --c-accent: #5653ef;
+  --c-border: #ececec;
+  --c-background: #f4f4f4;
+  --c-text: #080808;
+  --c-white: #fff;
+  --c-gray: #6a6a6a;
+
+  --f-name: 'Montserrat';
+  --f-fallback: Arial, Helvetica, sans-serif;
+
+  font-family: var(--f-name), var(--f-fallback);
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@include font('Montserrat', '/fonts/Montserrat-Thin', 100);
+@include font('Montserrat', '/fonts/Montserrat-ExtraLight', 200);
+@include font('Montserrat', '/fonts/Montserrat-Light', 300);
+@include font('Montserrat', '/fonts/Montserrat-Regular', 400);
+@include font('Montserrat', '/fonts/Montserrat-Medium', 500);
+@include font('Montserrat', '/fonts/Montserrat-SemiBold', 600);
+@include font('Montserrat', '/fonts/Montserrat-Bold', 700);
+@include font('Montserrat', '/fonts/Montserrat-ExtraBold', 800);
+@include font('Montserrat', '/fonts/Montserrat-Black', 900);
+
+@include font-variable('Montserrat', '/fonts/Montserrat-VariableFont_wght', "100 900");
+
+@include font('Coda', '/fonts/Coda-Regular', 400);
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  width: 100dvw;
+  height: 100dvh;
+
+  padding: 16px;
+
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 22px;
+  }
+}
+
+[hidden] {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  height: 1px;
+  width: 1px;
+  clip-path: circle(0);
+  transform: scale(0);
+}
